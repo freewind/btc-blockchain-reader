@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.60'
+    ext.kotlin_version = '1.2.71'
     repositories {
         mavenLocal()
         jcenter()
@@ -20,6 +20,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.apache.commons:commons-lang3:3.7"
     compile "commons-io:commons-io:2.6"
+    compile 'commons-codec:commons-codec:1.11'
+    compile 'com.google.code.gson:gson:2.8.5'
+    compile 'berkeleydb:je:3.2.76'
     testCompile "junit:junit:4.11"
     testCompile 'org.assertj:assertj-core:3.9.0'
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
