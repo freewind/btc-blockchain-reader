@@ -20,7 +20,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.apache.commons:commons-lang3:3.7"
     compile "commons-io:commons-io:2.6"
+    compile "com.github.kittinunf.fuel:fuel:1.13.0"
     compile 'commons-codec:commons-codec:1.11'
+    compile 'org.bitcoinj:bitcoinj-core:0.14.7'
     compile 'com.google.code.gson:gson:2.8.5'
     compile 'berkeleydb:je:3.2.76'
     testCompile "junit:junit:4.11"
