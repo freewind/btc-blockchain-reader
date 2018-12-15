@@ -12,24 +12,23 @@ fun main(args: Array<String>) {
     for (blockFile in blockFiles) {
         val input = blockFile.inputStream()
 
-        (0..1).map {
+        (0..1).map { height ->
             val block = readBlock(input)
-            println(block)
-            println(toJson(block))
+            val json = toJson(block)
 
-            verifyBlock(block)
+//            verifyBlock(block)
+            File(targetDir, "${height}.json").writeText(json)
         }
     }
 }
 
 fun verifyBlock(block: Block) {
-    TODO
+//    TODO
 }
 
 fun getBlockFiles(dataDir: File): List<File> {
-    return dataDir.listFiles().filter { it.name.startsWith("blk") && it.name.endsWith(".dat") }
+    return dataDir.listFiles().filter { it.name.matches("""blk\d+.dat""".toRegex()) }
 }
-
 
 fun toJson(obj: Any): String {
     val gson = GsonBuilder().setPrettyPrinting().create()

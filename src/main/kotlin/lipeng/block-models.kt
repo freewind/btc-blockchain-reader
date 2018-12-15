@@ -65,7 +65,7 @@ fun readBlock(input: InputStream): Block {
                     nonce = int4(input)
             ),
             transactionCount = run { transactionCount = varInt(input); transactionCount },
-            transactions = (0 until transactionCount).map { _ ->
+            transactions = (0 until transactionCount).map {
                 var inCount: VarInt = 0
                 var outCount: VarInt = 0
                 Transaction(
